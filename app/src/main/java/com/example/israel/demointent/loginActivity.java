@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.israel.demointent.utils.Constantes;
+
 public class loginActivity extends AppCompatActivity {
 
     private EditText login;
@@ -24,8 +26,13 @@ public class loginActivity extends AppCompatActivity {
     public void fazerConexao(View v){
 
         Intent validaLogin = new Intent(this, ValidaLoginActivity.class);
-        validaLogin.putExtra("login", "login.get");
-
+        validaLogin.putExtra(Constantes.KEY_LOGIN, login.getText().toString());
+        validaLogin.putExtra(Constantes.KEY_SENHA, senha.getText().toString());
+        startActivityForResult(validaLogin, Constantes.REQUEST_CODE_VALIDA_LOGIN);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }
