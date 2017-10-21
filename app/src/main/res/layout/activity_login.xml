@@ -29,12 +29,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etSenha"/>
+        android:id="@+id/etSenha"
+        android:inputType="textPassword"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Conectar"
-        android:onClick="conectar"/>
+        android:onClick="fazerConexao"/>
 
 </LinearLayout>
