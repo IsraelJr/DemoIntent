@@ -32,6 +32,15 @@ public class loginActivity extends AppCompatActivity {
         startActivityForResult(validaLogin, Constantes.REQUEST_CODE_VALIDA_LOGIN);
     }
 
+    public void testeBroadcast(View v){
+
+        Intent i = new Intent();
+        i.setAction("android.app.action.LOGIN_SUCESSO");
+        sendBroadcast(i);
+
+    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
