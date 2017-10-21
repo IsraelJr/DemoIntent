@@ -100,5 +100,27 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Serviço"
+        android:id="@+id/print_timestamp"
+        android:onClick="startService"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timestamp_text"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Serviço"
+        android:id="@+id/stop_service"
+        android:onClick="stopService"/>
+
+
+
 
 </LinearLayout>

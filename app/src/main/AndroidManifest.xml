@@ -16,14 +16,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ValidaLoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <receiver android:name=".broadcastreceiver.MyReceiver">
             <intent-filter>
-                <action android:name="android.app.action.LOGIN_SUCESSO"/>
+                <action android:name="android.app.action.LOGIN_SUCESSO" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".broadcastreceiver.AlarmReceiver" />
 
     </application>
