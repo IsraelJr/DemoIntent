@@ -1,13 +1,60 @@
 package com.example.israel.demointent;
 
-import android.support.v7.app.AppCompatActivity;
+import android.os.PersistableBundle;
 import android.os.Bundle;
 
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.israel.demointent.utils.Constantes;
+
 public class MainActivity extends AppCompatActivity {
+
+    private TextView txtNome;
+    private TextView placarHome;
+    private TextView placarVisitante;
+
+    private int contHome = 0;
+    private int contVisitante = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtNome = (TextView) findViewById(R.id.tvLogin);
+        placarHome = (TextView) findViewById(R.id.tvPlacarHome);
+        placarVisitante = (TextView) findViewById(R.id.tvPlacareVisitante);
+
+        if(savedInstanceState != null){
+            contHome = savedInstanceState.getInt(Constantes.KEY_PLACAR_CASA);
+            contVisitante = savedInstanceState.getInt(Constantes.KEY_PLACAR_VISITANTE);
+        }
+
+        placarHome.setText(String.valueOf(contHome));
+        placarVisitante.setText(String.valueOf(contVisitante));
+
+        if(getIntent() != null){
+            txtNome.setText(getIntent().getStringExtra(Constantes.KEY_LOGIN));
+        }
+    }
+
+    public void golCasa(View v){
+        contHome++;
+        placarHome.setText(String.valueOf(contHome));
+    }
+
+    public void golVisitante(View v){
+        contVisitante++;
+        placarVisitante.setText(String.valueOf(contVisitante));
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(Constantes.KEY_PLACAR_CASA, contHome);
+        outState.putInt(Constantes.KEY_PLACAR_VISITANTE, contVisitante);
     }
 }

@@ -43,6 +43,10 @@ public class loginActivity extends AppCompatActivity {
                         boolean ehLoginValido = data.getBooleanExtra(Constantes.KEY_RESULT_LOGIN, false);
                         if(ehLoginValido){
                             Toast.makeText(this,"Login valido!", Toast.LENGTH_SHORT).show();
+                            Intent telaPrincipal = new Intent(this, MainActivity.class);
+                            telaPrincipal.putExtra(Constantes.KEY_LOGIN, login.getText().toString());
+                            startActivity(telaPrincipal);
+                            finish();
                         }else{
                             Toast.makeText(this,"Login invalido!", Toast.LENGTH_SHORT).show();
                         }
