@@ -23,6 +23,20 @@
         android:layout_height="2dp"
         android:background="#DDD" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tempoJogo"
+        android:hint="Tempo do Jogo"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Programar Alarme"
+        android:id="@+id/despertar"
+        android:onClick="alarme"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,7 +99,6 @@
             android:layout_weight="0.5"/>
 
     </LinearLayout>
-
 
 
 </LinearLayout>
